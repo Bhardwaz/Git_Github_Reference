@@ -76,5 +76,24 @@ no changes added to commit (use "git add" and/or "git commit -a")
 # Understanding HEAD and Checksum
 #### When you open any notepad, you see cursor blinking. Assume that as ```HEAD```. Now I have added ```This is my first line``` into my file. Now Cursor must be blinking at `e` of `line` so ```HEAD``` is at `e`. Now wherever cursor blinks the ```HEAD``` is there even i add or delete from file. I Can go back and add something there then my ```HEAD``` will be there. So in general wherever the tip of latest commit my HEAD stay there. Sometimes in project we want to point our ```HEAD``` on previous commits and want to add there. That can be the case. That is all ```HEAD``` is made for. We should keep in my mind that where my HEAD is and where i am adding or making changes in my project. ```HEAD is your Cursor in layman terms.``` 
 
+# Track difference b/w files
+#### When we make changes in any file or someone else has made changes and we do not know the exact changes then we can do `git diff ` to know the changes but in large code bases it can be tricky too and this command has its some parameters also. we will see that further for now it is good that you become familiar with this.  
+![screenshot](GitNotesSC2.PNG 'git diff')
+#### We can check difference b/w staged and local files by passing arguments `git diff --staged`
+# Deleting From Repo
+- Bad way to delete 
+   - when file is in staged phase and we delete that directly from folder
+- Better way to delete
+#### ```git rm filename``` 
+
+#### After deleting. This also needs to be commited so that everyone know what have you deleted
+
+#### This all depends on perpective what you want to acheive. There is no such good or bad things. But working with others you must need to be careful
+
+# Repo Reset and unstaging
+- Situation 1
+  - Suppose i am working in my local repo. i have made some changes into my file now that file has started not working properly. suppose its making issues in my project right. In this situation if i want previous version of my file where i commited that. i can do  ``` git checkout --filename``` and magically every changes will be gone and you will get previous version of your file where your file was working properly. This command comes in handy when we work with branches. we will see that later.
+- Situation 2
+  - Suppose i have accidently pushed a file into staged area. i want that back to local area. i can simply run a command for that file. also it can be done for whole lot of files ```git reset HEAD ``` it bring file to local or unstage area. Now i can do  ``` git checkout --filename``` if i want previous version of file or can keep working in local
 
 
