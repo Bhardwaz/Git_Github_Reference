@@ -179,5 +179,38 @@ And
 ### First you need to switch yourself onto other branch or onto master. Then you need to pass a cmd ``` git branch -d branchName```. If this branch is not equivalent to master branch then git wont allow you to delete it. in this situation if you really wanna delete the branch then you need to yell at git means you need to pass ```-d``` in Caps ```-D```
 
 # Merging in Git 
+### First You need to be on reciver branch then you need to pull that branch. Command is simple ``` git branch branchName ```
+
+# Fast-Forward Merging 
+### When we make a new branch, work there and commit there. That make SHAs with commits. Now Master branch has different SHA on tip and this new branch has different SHA. In that case when we merge that branch to other branch the SHA of branch also integrate with receiving branch SHAs
+
+### Another Scenario is When we do fast-forward the commit does not make any noise it just get merge with master branch but if you really wanna tell that you have worked on another branch and added a functionality then you commit that merge also. Yes it will make a new SHA the cmd is simple ``` git merge --no-ff branchName ``` --no-ff means is No Fast Forward
+
+### Another scenario is if you only want to do fast-forward then cmd is simple ``` git merge --ff-only branchName ```. It will only do ff if it wont able to do that it will simply abort the operation
+
+# Conflicts and Merging in Git
+### Branching is tough in Git. When More than one developer in different branch work upon common file. On merging those Conflicts happen. Git won't understand what to do
+![sc](Conflict.PNG 'Merging Conflict')
+### In this Situation You can not go back. You have three options here.
+### 1. Simply Abort (Undo) the merge and get back.
+### 2. Manually Resolve 
+### 3. Use the Tools
+
+### Modified file will look like this
+![sc](ConfilctedFile.PNG 'Conflicted file')
+### Manually You can delete the code between # and >>
+
+### ``` git merge --abort ``` This will do Undo
+
+# Stashing (Its like a folder)
+### When you have added some functionality through a branch and now you want to go on another branch. In this case git asked you to commit these changes to branch so in this case suppose we still not sure about functionality and want to go on another branch without commiting that. In this case Stashing comes handy.
+### Command is Simple ``` git stash save "message" ```
+
+# Stashing in Multiple Branches
+### To List out all stashes ``` git stash list ```
+### To get a Particular stash because there can be a lot of stash on various branches on a bigger project ``` git stash show stash@{number of stash start from zero same like array } ```
+### You can merge all of your stashes
+
+
 
 
