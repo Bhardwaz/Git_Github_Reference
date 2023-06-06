@@ -223,6 +223,7 @@ To delete all
 
 # Git & Github
 Git clone 
+fetch before push
 
 
 
