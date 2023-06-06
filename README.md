@@ -221,9 +221,8 @@ There are two ways - 1. Delete Entire Folder 2. Refer to those stash you want to
 To delete all
 ``` git stash clear ```
 
-# Git @ Github
----
-# Git Online hosting
+# Git & Github
+Git clone 
 
 
 
