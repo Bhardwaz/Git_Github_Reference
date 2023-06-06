@@ -73,13 +73,13 @@ no changes added to commit (use "git add" and/or "git commit -a")
 - 40 character SHA-1 ```[0-9 or a-f]```
 #### Git takes all information into project ```files, commit messages, time, author ``` everything. That everything go into algorithm knowns as SHA-1. When you even add a dot into any of file of project. It generates a different SHA-1 or big string(40 Characters ). These are Known as Snap Shots
 
-![Git Head](GitHEAD.PNG 'Git SHAs')
+![Git Head](./GitHEAD.PNG 'Git SHAs')
 # Understanding HEAD and Checksum
 #### When you open any notepad, you see cursor blinking. Assume that as ```HEAD```. Now I have added ```This is my first line``` into my file. Now Cursor must be blinking at `e` of `line` so ```HEAD``` is at `e`. Now wherever cursor blinks the ```HEAD``` is there even i add or delete from file. I Can go back and add something there then my ```HEAD``` will be there. So in general wherever the tip of latest commit my HEAD stay there. Sometimes in project we want to point our ```HEAD``` on previous commits and want to add there. That can be the case. That is all ```HEAD``` is made for. We should keep in my mind that where my HEAD is and where i am adding or making changes in my project. ```HEAD is your Cursor in layman terms.``` 
 
 # Track difference b/w files
 #### When we make changes in any file or someone else has made changes and we do not know the exact changes then we can do `git diff ` to know the changes but in large code bases it can be tricky too and this command has its some parameters also. we will see that further for now it is good that you become familiar with this.  
-![screenshot](GitNotesSC2.PNG 'git diff')
+![screenshot](./GitNotesSC2.PNG 'git diff')
 #### We can check difference b/w staged and local files by passing arguments `git diff --staged`
 # Deleting From Repo
 - Bad way to delete 
@@ -150,7 +150,7 @@ You can mention range of SHA-1 it will give all commit between those SHA-1. its 
 ### Merging
 ### context switching
 
-![sc](Branching.PNG 'Branching')
+![sc](./Branching.PNG 'Branching')
 
 Head can be tricky in this case but Head always points onto tip of the current working branch.
 
@@ -190,14 +190,14 @@ And
 
 # Conflicts and Merging in Git
 ### Branching is tough in Git. When More than one developer in different branch work upon common file. On merging those Conflicts happen. Git won't understand what to do
-![sc](Conflict.PNG 'Merging Conflict')
+![sc](./Conflict.PNG 'Merging Conflict')
 ### In this Situation You can not go back. You have three options here.
 ### 1. Simply Abort (Undo) the merge and get back.
 ### 2. Manually Resolve 
 ### 3. Use the Tools
 
 ### Modified file will look like this
-![sc](ConfilctedFile.PNG 'Conflicted file')
+![sc](./ConfilctedFile.PNG 'Conflicted file')
 ### Manually You can delete the code between # and >>
 
 ### ``` git merge --abort ``` This will do Undo
