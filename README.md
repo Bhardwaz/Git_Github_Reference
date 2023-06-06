@@ -98,45 +98,45 @@ no changes added to commit (use "git add" and/or "git commit -a")
   - Suppose i have accidently pushed a file into staged area. i want that back to local area. i can simply run a command for that file. also it can be done for whole lot of files ```git reset HEAD ``` it bring file to local or unstage area. Now i can do  ``` git checkout --filename``` if i want previous version of file or can keep working in local
 
 # Can we Reset Commits?
-#### No, You Can not Make Changes into commit but here is an exception. Answer of this comes from Git Fundamentals. Git has basically designed upon two principles Data Integrity and revisioning. Once the data is there if you are changing that a new ```SHA``` will be generated. This SHA keeps Data integrity intact. But Exception comes from a very last commit. You can change that or edit latest commit. in git we say that ```amend``` the commit. ``` git commit --amend -m ' this is new message '```
+No, You Can not Make Changes into commit but here is an exception. Answer of this comes from Git Fundamentals. Git has basically designed upon two principles Data Integrity and revisioning. Once the data is there if you are changing that a new ```SHA``` will be generated. This SHA keeps Data integrity intact. But Exception comes from a very last commit. You can change that or edit latest commit. in git we say that ```amend``` the commit. ``` git commit --amend -m ' this is new message '```
 
 # Checkout with previous version 
-#### suppose you have a file you want to go back on to previous version of that file. you can simply do ```git log``` all SHA that have generated will pop up. you can figure out where your file was working fine after that you can copy that SHA (only few starting alphabets will work) ```git checkout SHA filename```. You can review it before doing so ```git diff --unstage filename``` it will show what you are about to lose. After confirming you can ``` git reset HEAD filename``` reset the HEAD for file
+suppose you have a file you want to go back on to previous version of that file. you can simply do ```git log``` all SHA that have generated will pop up. you can figure out where your file was working fine after that you can copy that SHA (only few starting alphabets will work) ```git checkout SHA filename```. You can review it before doing so ```git diff --unstage filename``` it will show what you are about to lose. After confirming you can ``` git reset HEAD filename``` reset the HEAD for file
 
 # Soft(Safe), Mixed(Default) and Hard(Caution) Reset
-### Reset Means You about to lost data.
+Reset Means You about to lost data.
 
-### Soft Just Points towards another SHA. SHA Points on the tip of branch. When we do Soft delete it wont affect staging area and local files. just i need to git log and take SHA from where i want to start or record again. i just need to pass that SHA
+Soft Just Points towards another SHA. SHA Points on the tip of branch. When we do Soft delete it wont affect staging area and local files. just i need to git log and take SHA from where i want to start or record again. i just need to pass that SHA
 
-### Mixed - Points towards another SHA and makes your staging area a copy of repo. it wont affect local
+Mixed - Points towards another SHA and makes your staging area a copy of repo. it wont affect local
 
-### Hard - Its Includes - Local Files, Staging Area and Repo.
-### You can read more on this
+Hard - Its Includes - Local Files, Staging Area and Repo.
+You can read more on this
 
 # Ignoring The Files (Git do not track these files)
-### There is command git clean that clean the files from local itself but it wont work upon staged and repo area. It is not so much good
-### another powerful alternate we have ```.gitignore```. This wont listen we just need to make a file in which we need to include that what should be ignored for going into staged and repo area.
-### In a case if we want to ignore all the files of some specific extension like .js then we can do something like this ```*.js``` this will ignore all the file of ```.js``` extension but what if we want to keep single file of ```.js``` extension then we simply can put negate sign ```!app.js``` doing so only this file with extension ```.js```will go to repo. Rest all will be ignored
+There is command git clean that clean the files from local itself but it wont work upon staged and repo area. It is not so much good
+another powerful alternate we have ```.gitignore```. This wont listen we just need to make a file in which we need to include that what should be ignored for going into staged and repo area.
+In a case if we want to ignore all the files of some specific extension like .js then we can do something like this ```*.js``` this will ignore all the file of ```.js``` extension but what if we want to keep single file of ```.js``` extension then we simply can put negate sign ```!app.js``` doing so only this file with extension ```.js```will go to repo. Rest all will be ignored
 
 # What to Ignore 
-### We should ignore all the Bulky files and executable files that can be execute with code itself like dist files into parcel can be made as many times you want with simple command.
+We should ignore all the Bulky files and executable files that can be execute with code itself like dist files into parcel can be made as many times you want with simple command.
 
 # Notice ! .gitignore file need to go into repo. 
 
 # Gitignore will not listen
-### Suppose You have commited one file later you realized it should have into ```.gitignore```. In that case what you can do - delete the file and make other then put that into ```.gitignore```. But Here is another solution that we can put a query ```git rm --cached filename```. This will remove that file from staged area.
+Suppose You have commited one file later you realized it should have into ```.gitignore```. In that case what you can do - delete the file and make other then put that into ```.gitignore```. But Here is another solution that we can put a query ```git rm --cached filename```. This will remove that file from staged area.
 ---
 # This is does not even in git docs.
-### This is a trick. By default git does not care about empty folder. But what we can do is we can have a file with ```.gitkeep``` inside that or some other name - name does not matter - dot matters here - file should start with dot. By doing so git will start tracking empty folder too
+This is a trick. By default git does not care about empty folder. But what we can do is we can have a file with ```.gitkeep``` inside that or some other name - name does not matter - dot matters here - file should start with dot. By doing so git will start tracking empty folder too
 
 # Git tree listing
-### ls-tree
-### List the Contents of a given tree object like what ```ls -la``` does in the current working directory - Full SHA-1 - Partial SHA-1 - Branch Reference - Tag Reference - ^ - ~
+ls-tree
+List the Contents of a given tree object like what ```ls -la``` does in the current working directory - Full SHA-1 - Partial SHA-1 - Branch Reference - Tag Reference - ^ - ~
 ```git ls-tree Head```
 ``` git ls-tree master```
 
 # Git log 
-### This is useful for team lead to know about team members who all are commiting  
+This is useful for team lead to know about team members who all are commiting  
 ```git log --oneline``` it brings all commit into one line. we can pass number so that only required commit come 
 ```git log since='date'``` also its for --until 
 ```git log --author="name"```
@@ -155,11 +155,11 @@ You can mention range of SHA-1 it will give all commit between those SHA-1. its 
 Head can be tricky in this case but Head always points onto tip of the current working branch.
 
 # creating a new branch 
-### ```git branch branchName ```. ``` ls -la .git/refs/heads```
+ ```git branch branchName ```. ``` ls -la .git/refs/heads```
 always use regular letter not any special character those are nightmares
 
 ## Git Checkout
-### ``` git checkout branchName ``` by this command current working branch will change to mentioned branch
+``` git checkout branchName ``` by this command current working branch will change to mentioned branch
 To commit ``` git commit -am 'msg' ```
 
 ``` git checkout -b branchName``` although we were using only checkout for changing the branch but this one can create new branch and change the current working branch with same
@@ -171,7 +171,7 @@ And
 ``` git checkout -- filename``` also clear your changes you have made to your branch filename. it will make it same as it is in master branch
 
 # Renaming and Deleting of the branches 
-### ```git diff  branchName..otherBranchName``` to have a difference b/w both branches
+```git diff  branchName..otherBranchName``` to have a difference b/w both branches
 # To Rename a branch the command is 
 ``` git branch -m currentName newName ```
 
